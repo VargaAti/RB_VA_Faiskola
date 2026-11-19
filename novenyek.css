@@ -1,0 +1,183 @@
+:root {
+  /* Zöld árnyalatok */
+  --color-primary: #1B4332;       /* Mély fenyőzöld - fejléc, címsorok */
+  --color-secondary: #2D6A4F;     /* Üde lombzöld - másodlagos elemek, ikonok */
+  --color-soft-green: #E9F5EE;    /* Harmatos zsálya - kiemelt szekciók háttere */
+
+  /* Alap és kiegészítő színek */
+  --color-bg: #FAF8F2;            /* Meleg krém - oldal fő háttere */
+  --color-surface: #FFFFFF;       /* Tiszta fehér - kártyák, űrlap mezők háttere */
+  --color-accent: #9C6644;        /* Tölgyfa barna - CTA gombok, kiemelések */
+  --color-accent-hover: #7F4F24;  /* Sötét dióbarna - gomb hover állapot */
+
+  /* Szövegszínek */
+  --color-text: #1F2922;          /* Sötét mohaszürke - fő szöveg */
+  --color-text-muted: #52665A;    /* Halványabb zöldesszürke - mellékszöveg */
+  --color-text-light: #FAF8F2;    /* Világos szöveg sötétzöld hátteren */
+
+  /* Keretek és árnyékok */
+  --color-border: #D4E2D9;        /* Finom zöldes szegély kártyákhoz, inputokhoz */
+}
+
+:root {
+  --cim: #1f5f73;
+  --szoveg: #222;
+  --hatter: #e8edf0;
+  --csillag: #0a5bb5;
+  --google-csillag: #f4b400;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--szoveg);
+  background: #fff;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--cim);
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 28px;
+}
+
+/* ---------- VÉLEMÉNYEK ---------- */
+.velemenyek {
+  background: var(--hatter);
+  padding: 36px 24px;
+}
+
+.velemeny-sor {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px 4px 18px;
+}
+
+.velemeny {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 6px;
+  padding: 14px 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* HOVER: vélemény kártya */
+.velemeny:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+}
+
+.velemeny-fej {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ikon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #d7ec00;
+  flex-shrink: 0;
+}
+
+.ikon-google {
+  background: none;
+  font-style: normal;
+  font-weight: 700;
+  color: #4285f4;
+}
+
+.csillagok {
+  color: var(--csillag);
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 6px 0 8px;
+}
+
+.csillagok.google { color: var(--google-csillag); }
+
+.velemeny p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  max-height: 7.5em;
+  overflow-y: auto;
+}
+
+/* ---------- KATEGÓRIÁK ---------- */
+.kategoriak {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 16px 56px;
+}
+
+.racs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.kategoria {
+  display: block;
+  background: #fff;
+  text-decoration: none;
+  color: var(--szoveg);
+  box-shadow: 0 1px 6px rgba(0,0,0,.18);
+  overflow: hidden;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.kep {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.kep img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.kategoria span {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  padding: 8px 6px 9px;
+  transition: color .25s ease;
+}
+
+/* HOVER: kategória kártya */
+.kategoria:hover,
+.kategoria:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.25);
+}
+
+.kategoria:hover img,
+.kategoria:focus-visible img {
+  transform: scale(1.08);
+}
+
+.kategoria:hover span,
+.kategoria:focus-visible span {
+  color: var(--cim);
+  font-weight: 600;
+}
+
+/* Ha valaki kikapcsolta az animációkat a rendszerében */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

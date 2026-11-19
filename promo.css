@@ -1,0 +1,20 @@
+:root {
+  /* Zöld árnyalatok */
+  --color-primary: #1B4332;       /* Mély fenyőzöld - fejléc, címsorok */
+  --color-secondary: #2D6A4F;     /* Üde lombzöld - másodlagos elemek, ikonok */
+  --color-soft-green: #E9F5EE;    /* Harmatos zsálya - kiemelt szekciók háttere */
+
+  /* Alap és kiegészítő színek */
+  --color-bg: #FAF8F2;            /* Meleg krém - oldal fő háttere */
+  --color-surface: #FFFFFF;       /* Tiszta fehér - kártyák, űrlap mezők háttere */
+  --color-accent: #9C6644;        /* Tölgyfa barna - CTA gombok, kiemelések */
+  --color-accent-hover: #7F4F24;  /* Sötét dióbarna - gomb hover állapot */
+
+  /* Szövegszínek */
+  --color-text: #1F2922;          /* Sötét mohaszürke - fő szöveg */
+  --color-text-muted: #52665A;    /* Halványabb zöldesszürke - mellékszöveg */
+  --color-text-light: #FAF8F2;    /* Világos szöveg sötétzöld hátteren */
+
+  /* Keretek és árnyékok */
+  --color-border: #D4E2D9;        /* Finom zöldes szegély kártyákhoz, inputokhoz */
+}
