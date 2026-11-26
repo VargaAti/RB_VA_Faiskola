@@ -18,3 +18,219 @@
   /* Keretek és árnyékok */
   --color-border: #D4E2D9;        /* Finom zöldes szegély kártyákhoz, inputokhoz */
 }
+
+:root {
+  --color-primary: #1B4332;
+  --color-secondary: #2D6A4F;
+  --color-soft-green: #E9F5EE;
+  --color-bg: #FAF8F2;
+  --color-surface: #FFFFFF;
+  --color-accent: #9C6644;
+  --color-accent-hover: #7F4F24;
+  --color-text: #1F2922;
+  --color-text-muted: #52665A;
+  --color-border: #D4E2D9;
+  --cim: #1f5f73;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", Arial, sans-serif;
+    background-color: #f4f7f4;
+    color: var(--color-text);
+}
+
+/* Menü (azonos a novenyek.css-sel) */
+.menu {
+    background-color: #2e5a27;
+    padding: 15px 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    background-color: #4a8c3f;
+}
+
+/* Kiemelt Promóciós Fejléc */
+.promo-hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.promo-tartalom {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.jelveny {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promo-hero h1 {
+    font-size: 36px;
+    margin: 20px 0 15px;
+}
+
+.promo-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--color-soft-green);
+}
+
+.cta-gomb {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-gomb:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Akciós Kártyák Szekció */
+.akciok {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.akciok h2,
+.zene-szekcio h2 {
+    text-transform: uppercase;
+    color: var(--cim);
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.akcio-racs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.akcio-kartya {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.akcio-kartya.kiemelt {
+    border: 2px solid var(--color-secondary);
+    background-color: var(--color-soft-green);
+}
+
+.kedvezmeny {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.akcio-kartya h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--color-primary);
+}
+
+.akcio-kartya p {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.kuponkod {
+    background-color: white;
+    border: 1px dashed var(--color-secondary);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--color-primary);
+}
+
+/* YouTube Zenelejátszó Szekció */
+.zene-szekcio {
+    max-width: 800px;
+    margin: 50px auto 70px;
+    padding: 30px 20px;
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.zene-szekcio h2 {
+    margin-bottom: 10px;
+}
+
+.zene-szekcio p {
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+}
+
+/* Reszponzív 16:9-es YouTube keret */
+.youtube-keret {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 képarány */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.youtube-keret iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Reszponzivitás mobilra/tabletre */
+@media (max-width: 768px) {
+    .akcio-racs {
+        grid-template-columns: 1fr;
+    }
+    .promo-hero h1 {
+        font-size: 28px;
+    }
+}
