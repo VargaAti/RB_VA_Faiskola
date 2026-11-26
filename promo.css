@@ -1,36 +1,13 @@
 :root {
-  /* Zöld árnyalatok */
-  --color-primary: #1B4332;       /* Mély fenyőzöld - fejléc, címsorok */
-  --color-secondary: #2D6A4F;     /* Üde lombzöld - másodlagos elemek, ikonok */
-  --color-soft-green: #E9F5EE;    /* Harmatos zsálya - kiemelt szekciók háttere */
-
-  /* Alap és kiegészítő színek */
-  --color-bg: #FAF8F2;            /* Meleg krém - oldal fő háttere */
-  --color-surface: #FFFFFF;       /* Tiszta fehér - kártyák, űrlap mezők háttere */
-  --color-accent: #9C6644;        /* Tölgyfa barna - CTA gombok, kiemelések */
-  --color-accent-hover: #7F4F24;  /* Sötét dióbarna - gomb hover állapot */
-
-  /* Szövegszínek */
-  --color-text: #1F2922;          /* Sötét mohaszürke - fő szöveg */
-  --color-text-muted: #52665A;    /* Halványabb zöldesszürke - mellékszöveg */
-  --color-text-light: #FAF8F2;    /* Világos szöveg sötétzöld hátteren */
-
-  /* Keretek és árnyékok */
-  --color-border: #D4E2D9;        /* Finom zöldes szegély kártyákhoz, inputokhoz */
-}
-
-:root {
   --color-primary: #1B4332;
   --color-secondary: #2D6A4F;
   --color-soft-green: #E9F5EE;
-  --color-bg: #FAF8F2;
   --color-surface: #FFFFFF;
   --color-accent: #9C6644;
   --color-accent-hover: #7F4F24;
   --color-text: #1F2922;
   --color-text-muted: #52665A;
   --color-border: #D4E2D9;
-  --cim: #1f5f73;
 }
 
 * {
@@ -41,13 +18,35 @@
 
 body {
     font-family: "Montserrat", Arial, sans-serif;
-    background-color: #f4f7f4;
     color: var(--color-text);
+    background-color: #111111; /* Sötét háttér a videó két oldalára */
 }
 
-/* Menü (azonos a novenyek.css-sel) */
+/* TELJES KÉPERNYŐS VIDEÓ HÁTTÉR (Ráközelítés nélkül) */
+.hatter-video {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Pontosan középre igazítja */
+    width: 130vw;                 /* Itt állítod a szélességet! (pl. 60vw, 80vw, 100vw vagy 900px) */
+    height: 100vh;
+    object-fit: fill;            /* Engedi, hogy a megadott szélességre húzza a videót */
+    z-index: -2;
+}
+
+.hatter-sotetites {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+/* Menü */
 .menu {
-    background-color: #2e5a27;
+    background-color: rgba(46, 90, 39, 0.9);
     padding: 15px 30px;
     display: flex;
     gap: 20px;
@@ -68,12 +67,11 @@ body {
     background-color: #4a8c3f;
 }
 
-/* Kiemelt Promóciós Fejléc */
+/* Fejléc */
 .promo-hero {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 70px 20px 40px;
 }
 
 .promo-tartalom {
@@ -93,15 +91,17 @@ body {
 }
 
 .promo-hero h1 {
-    font-size: 36px;
+    font-size: 38px;
     margin: 20px 0 15px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .promo-hero p {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: var(--color-soft-green);
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .cta-gomb {
@@ -123,17 +123,17 @@ body {
 /* Akciós Kártyák Szekció */
 .akciok {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 0 20px;
     text-align: center;
 }
 
-.akciok h2,
-.zene-szekcio h2 {
+.akciok h2 {
     text-transform: uppercase;
-    color: var(--cim);
+    color: #ffffff;
     font-size: 28px;
     margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .akcio-racs {
@@ -143,11 +143,11 @@ body {
 }
 
 .akcio-kartya {
-    background: var(--color-surface);
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 30px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -155,7 +155,7 @@ body {
 
 .akcio-kartya.kiemelt {
     border: 2px solid var(--color-secondary);
-    background-color: var(--color-soft-green);
+    background-color: rgba(233, 245, 238, 0.95);
 }
 
 .kedvezmeny {
@@ -192,13 +192,16 @@ body {
     max-width: 800px;
     margin: 50px auto 70px;
     padding: 30px 20px;
-    background-color: var(--color-surface);
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 .zene-szekcio h2 {
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
@@ -207,25 +210,17 @@ body {
     margin-bottom: 25px;
 }
 
-/* Reszponzív 16:9-es YouTube keret */
-.youtube-keret {
-    position: relative;
+/* MP3 Zenelejátszó stílusa */
+.mp3-lejatszo {
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 képarány */
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 30px;
+    outline: none;
 }
 
-.youtube-keret iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Reszponzivitás mobilra/tabletre */
+/* Reszponzivitás */
 @media (max-width: 768px) {
     .akcio-racs {
         grid-template-columns: 1fr;
@@ -233,4 +228,19 @@ body {
     .promo-hero h1 {
         font-size: 28px;
     }
+}
+/* === KÖZÉPRE IGAZÍTOTT BOSS.JPG KÉP (DOBOZ NÉLKÜL) === */
+.kozep-kep {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 40px;
+    padding: 0 20px;
+}
+
+.kozep-kep img {
+    max-width: 500px; /* Itt tudod állítani a kép méretét */
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Enyhén lekerekített sarkok (ha szögleteset akarsz, töröld ki ezt a sort) */
+    display: block;
 }

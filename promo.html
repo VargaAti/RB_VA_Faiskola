@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="promo.css">
 </head>
 <body>
+    <!-- TELJES KÉPERNYŐS VIDEÓ HÁTTÉR -->
+    <video autoplay muted loop playsinline class="hatter-video">
+        <source src="tirpleT.mp4" type="video/mp4">
+    </video>
+    <div class="hatter-sotetites"></div>
+
     <!-- Menü -->
     <div class="menu">
         <a href="index.html">Kezdőlap</a>
@@ -20,10 +26,15 @@
         <div class="promo-tartalom">
             <span class="jelveny">Szezonális Ajánlat</span>
             <h1>Őszi és Tavaszi Kertmegújító Akció!</h1>
-            <p>Vásárolj legalább 3 gyümölcsfát vagy díszcserjét, és a 4. növényt ajándékba adjuk, mellé pedig ingyenes szaktanácsadást biztosítunk.</p>
+            <p>Vásárolj legalább 3 gyümölcsfát vagy díszcserjét, és a 4. növényt ajándékba 10x áron adjuk, mellé pedig ingyenes szakmai félrevezetést biztosítunk.</p>
             <a href="novenyek.html" class="cta-gomb">Növények megtekintése</a>
         </div>
     </header>
+
+    <!-- KÖZÉPRE IGAZÍTOTT KÉP KÁRTYA -->
+    <div class="kozep-kep">
+        <img src="boss.jpg" alt="Boss">
+    </div>
 
     <!-- Akciós csomagok / kuponok -->
     <section class="akciok">
@@ -52,19 +63,15 @@
         </div>
     </section>
 
-    <!-- Beágyazott YouTube zenelejátszó -->
+    <!-- Beágyazott MP3 zenelejátszó -->
     <section class="zene-szekcio">
         <h2>Hangolódj a kertészkedésre!</h2>
-        <p>Hallgasd nyugtató háttérzenénket, miközben böngészed a kínálatunkat.</p>
+        <p>Hallgasd háttérzenénket, miközben böngészed a kínálatunkat.</p>
         
-        <div class="youtube-keret">
-            <iframe 
-                src="https://www.youtube.com/embed/3TRHDvP6qtU?autoplay=1&mute=1&rel=0" 
-                title="YouTube zenelejátszó" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
+        <audio controls loop class="mp3-lejatszo">
+            <source src="tripleT.mp3" type="audio/mpeg">
+            A böngésződ nem támogatja a hanglejátszást.
+        </audio>
     </section>
+</body>
 </html>
